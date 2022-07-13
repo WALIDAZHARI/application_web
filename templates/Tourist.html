@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Casablanca City</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/vendor.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Tourist.css' %}">
+
+    <!-- favicons
+    ================================================== -->
+    {% load static %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'essentials/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/svg" sizes="32x32" href="{% static 'essentials/logo-casa.svg' %}">
+    <link rel="icon" type="image/svg" sizes="16x16" href="{% static 'essentials/logo-casas.svg' %}">
+    <link rel="manifest" href="{% static 'essentials/site.webmanifest' %}">
+
+</head>
+
+
+<body id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+
+            <div class="row s-header__inner">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="{% url 'home' %}">
+                            <img src="{% static 'images/SVG/logo-casa.svg' %}" alt="Homepage">
+                        </a>
+                    </div>
+
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> 
+                <!-- end s-header__block -->
+
+                <nav class="s-header__nav">
+    
+                    <ul class="s-header__menu-links">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="current"><a href="#intro" class="smoothscroll">Touristic</a></li>
+                        <li><a href="#about" class="smoothscroll">Why Casablanca ?</a></li>
+                        <li><a href="#folio" class="smoothscroll">Places to See</a></li>
+                        <li><a href="#circuit" class="smoothscroll">Circuit</a></li>
+                        <li><a href="{% url 'WWTP' %}">WWTP</a></li>
+                        <li><a href="{% url 'School' %}">School</a></li>
+                    </ul> 
+                    <!-- s-header__menu-links -->
+
+                    <ul class="s-header__social">
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16 fill="currentColor" class="bi bi-instagram" viewBox="0 0 20 16">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="17" class="bi bi-linkedin" viewBox="0 0 22 17" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" fill="currentColor" class="bi bi-pinterest" viewBox="0 0 19 18" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Pinterest</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" fill="currentColor" class="bi bi-github" viewBox="0 0 18 17" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">GitHub</span>
+                            </a>
+                        </li>
+                    </ul> 
+                    <!-- s-header__social -->
+    
+                </nav> 
+                <!-- end s-header__nav -->
+
+            </div> 
+            <!-- end s-header__inner -->
+
+        </header> 
+        <!-- end s-header -->
+
+
+        <!-- # site-content
+        ================================================== -->
+        <section id="content" class="s-content">
+    
+
+            <!-- intro
+            ----------------------------------------------- -->
+            <section id="intro" class="s-intro target-section">
+
+                <div class="s-intro__bg"></div>
+
+                <div class="row s-intro__content">
+
+                    <div class="s-intro__content-bg"></div>
+
+                    <div class="column lg-12 s-intro__content-inner">
+                        
+                        <h1 class="s-intro__content-title">
+                            The Complete <br>
+                            Touristic <br>
+                            Guide.
+                        </h1>
+
+                        <div class="s-intro__content-buttons">
+                            <a href="#about" class="btn btn--stroke s-intro__content-btn smoothscroll">More About</a>
+                            <a href="https://www.youtube.com/embed/3UHkw2bDZK4" class="s-intro__content-video-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M7 6v12l10-6z"></path></svg>
+                            </a>
+                        </div>
+                        
+                    </div> 
+                    <!-- s-intro__content-inner -->
+
+                </div> 
+                <!-- s-intro__content -->
+
+                <div class="s-intro__scroll-down">
+                    <a href="#about" class="smoothscroll">
+                        <span>Scroll Down</span>
+                    </a>
+                </div> 
+                <!-- s-intro__scroll-down -->
+
+            </section> 
+            <!-- end s-intro -->
+
+
+            <!-- about
+            ----------------------------------------------- -->
+            <section id="about" class="s-about target-section">
+
+                <div class="row section-header" data-num="01">
+                    <h3 class="column lg-12 section-header__pretitle pretitle text-pretitle">Why Casablanca ?</h3>
+                    <div id="section_header_about" class="column lg-6 stack-on-1100 section-header__primary">
+                        <h2 class="title text-display-1">
+                            5 reasons to visit Casablanca.
+                        </h2>
+                    </div>
+
+                    <div class="img_about"></div>
+                </div> 
+                <!-- end section-header -->
+
+                <div class="row list-block show-ctr block-lg-one-half block-tab-whole">
+    
+                    <div id="list-block__item_about" class="column list-block__item">
+                        <div class="list-block__title">
+                            <h3 class="h5">A city facing the ocean</h3>
+                        </div>
+                        <div class="list-block__text">
+                            <p>
+                                Enjoy the mildness of its warm and sunny climate all year round and take a walk along the corniche. 
+                                On the large beach you can practice a large number of water activities such as surfing.
+                            </p>
+                        </div>
+                    </div> 
+                    <!-- end list-block__item -->
+
+                    <div id="list-block__item_about" class="column list-block__item">
+                        <div class="list-block__title">
+                            <h3 class="h5">In the footsteps of the past</h3>
+                        </div>
+                        <div class="list-block__text">
+                            <p>
+                                With its rich historical past, Casablanca includes many historical monuments such as the Mahkama du Pacha highlighted 
+                                by its Hispano-Moorish architecture. Also take a walk in the old medina or in the direction of the rocky islet 
+                                of Sidi Abderrahman to discover chapters of the history of the city.
+                            </p>
+                        </div>
+                    </div> 
+                    <!-- end list-block__item -->
+        
+                    <div id="list-block__item_about" class="column list-block__item">
+                        <div class="list-block__title">
+                            <h3 class="h5">The happiness of being greedy</h3>
+                        </div>
+                        <div class="list-block__text">
+                            <p>
+                                As in all the cities of the kingdom, here the food is simply delicious. We enjoy a simple fried fish or eggplant 
+                                sandwiches sold in the medina, or even the essential almond pastries.
+                            </p>
+                        </div>
+                    </div> 
+                    <!-- end list-block__item -->
+
+                    <div id="list-block__item_about" class="column list-block__item">
+                        <div class="list-block__title">
+                            <h3 class="h5">To the rhythm of the festivals</h3>
+                        </div>
+                        <div class="list-block__text">
+                            <p>
+                                In April, the Jazzablanca festival attracts musicians from all over the world. The Le Boulevard festival for young musicians, 
+                                nicknamed L'Boulevard, transforms the city center into a gigantic performance hall, while the Anfa festival transforms 
+                                the main beach into an open-air concert hall at the end of July.
+                            </p>
+                        </div>
+                    </div> 
+                    <!-- end list-block__item -->
+        
+                    <div id="list-block__item_about" class="column list-block__item">
+                        <div class="list-block__title">
+                            <h3 class="h5">An ideal location for visiting other places</h3>
+                        </div>
+                        <div class="list-block__text">
+                            <p>
+                                Take advantage of the geographical location of Casablanca to discover other wonders of the country. 
+                                You can easily go to Rabat as well as to El Jadida, or even go on camel treks in the Bedouin country.
+                            </p>
+                        </div>
+                    </div> 
+                    <!-- end list-block__item -->
+
+                </div> 
+                <!-- end process-list -->
+
+            </section> 
+            <!-- end s-about -->
+
+
+            <!-- portfolio
+            ----------------------------------------------- -->
+            <section id="folio" class="s-folio target-section">
+
+                <div class="row section-header light-on-dark" data-num="02">
+                    <h3 class="column lg-12 section-header__pretitle text-pretitle">Places to See</h3>
+                    <div class="column lg-6 stack-on-1100 section-header__primary">
+                        <h2 class="title text-display-1">
+                            THE PLACES TO SEE ABSOLUTELY IN CASABLANCA AND SURROUNDINGS
+                        </h2>
+                    </div>
+                </div> 
+                <!-- end section-header -->
+
+                <div id="bricks" class="row bricks">
+                    <div class="column lg-12 masonry">
+                        <div class="bricks-wrapper">
+
+                            <div class="grid-sizer"></div>
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-01" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/morocco_mall.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Shopping Center</div>
+                                        <h4 class="entry__title">Morocco Mall</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-02" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/sindibad.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Recreational Park</div>
+                                        <h4 class="entry__title">Sindibad Park</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-03" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/anfaplace.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Shopping Center</div>
+                                        <h4 class="entry__title">Anfa Place</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-04" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/hassan2.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Historical Monument</div>
+                                        <h4 class="entry__title">Hassan 2 Mosque</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-05" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/Phare-hank.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Historical Monument</div>
+                                        <h4 class="entry__title">Phare Al Hank</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-06" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/Marina-Shopping.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Shopping Center</div>
+                                        <h4 class="entry__title">Marina Shopping Center</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-07" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/marche-centrale.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Historical Market</div>
+                                        <h4 class="entry__title">Marche Central</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-08" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/marishal.jpeg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Square</div>
+                                        <h4 class="entry__title">Place des Nations-Unies</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-09" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/place-md5.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Square</div>
+                                        <h4 class="entry__title">Place Mohamed V</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-10" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/eglise.jpeg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Historical Church</div>
+                                        <h4 class="entry__title">Église du Sacré-Cœur</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-11" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/villa-des-arts.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Recreational</div>
+                                        <h4 class="entry__title">Villa des Arts</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-12" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/palais-royale.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Historical Monument</div>
+                                        <h4 class="entry__title">Palais Royale</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-13" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/pacha.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Historical Monument</div>
+                                        <h4 class="entry__title">Mehkama du Pacha</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-14" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/Musée.jpg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Historical Museum</div>
+                                        <h4 class="entry__title">Musée du Judaïsme Marocain</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                            <article class="brick brick--double entry">
+                                <a href="#modal-15" class="entry__link">
+                                    <div class="entry__thumb">
+                                        <img src="{% static 'images/touristic/anfapark1.jpeg' %}" alt="">
+                                    </div>
+                                    <div class="entry__info">
+                                        <div class="entry__cat">Recreational Park</div>
+                                        <h4 class="entry__title">Anfa Park</h4>
+                                    </div>
+                                </a>
+                            </article> 
+                            <!-- entry -->
+
+                        </div> 
+                        <!-- end bricks-wrapper -->
+
+                    </div> 
+                    <!-- end masonry -->
+
+                </div> 
+                <!-- end bricks -->
+
+
+                <!-- modal templates popup
+                -------------------------------------------- -->
+                <div id="modal-01" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/morocco_mall.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Morocco Mall</h5>
+                            <p>Discover the first "Retailtainment" Mall in Africa and the Region. Enjoy the best of shopping and entertainment in an incomparable place that represents one of Morocco's modern showcases, symbolizing its diversity, openness and generosity. A real destination for nationals as well as for tourists or passing visitors, the Morocco Mall houses a full range of services: fashion, beauty, luxury, culture, technology, health, decoration, food, equipment, crafts, services, leisure, relaxation , catering... Extending over 10 hectares with 70,000 m2 of commercial space on 3 levels and 350 sales areas, the Morocco Mall brings together more than 600 brands from various universes.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>            
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-02" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/sindibad.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Sindibad Park</h5>
+                            <p>SINDIBAD PARK is a subsidiary of SINDIBAD BEACH RESORT and is located in the heart of Ain Diab, in Casablanca, the park covers 32 ha and includes 3 different universes: An amusement park, An animal park, and a forest recreational. The park has more than 20 surprising attractions, more than thirty animal species, souvenir shops, themed restaurants, as well as sandwich shops. Diversified entertainment is also offered throughout the day for even more of a change of scenery. Entrance tickets to the par vary according to the size of the visitors and are available in weekly rates and Weekend/holiday/summer vacation rates. Attractions are payable either individually (in diamonds) or as a package (entry + attractions).</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-03" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/anfaplace.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Anfa Place</h5>
+                            <p>The AnfaPlace Mall is a shopping center located at  " boulevard de la corniche de Aïn Diab in Casablanca ", the economic capital of Morocco and was inaugurated on February 8, 2013.
+                                Composed of more than 30,000 square meters of commercial area, the shopping center has a ground floor and two floors of commercial spaces, the first being mainly dedicated to shops and various stores and the second to fast food. , and has two levels of underground parking, offering over a thousand parking spaces spread over two dedicated underground levels.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-04" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/hassan2.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Hassan 2 Mosque</h5>
+                            <p>After the mosque in Mecca, the Hassan II mosque in Casablanca is the second highest religious monument on the planet. With a minaret culminating at 210 meters above sea level, 
+                                the mosque is indeed gigantic in size. Erected between 1986 and 1993, the Hassan II mosque was built two-thirds over the sea. It can accommodate more than 100,000 worshippers, it covers a total area of ​​twenty thousand square meters and it has an impressive sunroof. Designed by Michel Pinseau, the Hassan II mosque is also an architectural gem. The monument is finely decorated with marble, zelliges, carved wooden panels and it has a laser (with a range of 30 km) constantly pointed towards Mecca.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-05" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/phare-hank2.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Phare Al Hank</h5>
+                            <p>The lighthouse of Casablanca, also called, is characterized by an impressive tower of 51m built on a base 6.60m high and with a diameter of 39m. It is the work of Albert Laprade in 1916 and began to operate on August 1, 1920.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-06" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/Marina-Shopping.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Marina Shopping Center</h5>
+                            <p>The Marina Shopping Center is a shopping center inaugurated in Casablanca , Morocco on April 15 , 2019. It is spread over a dedicated area totaling 43,000 m² of leisure spaces, restaurants and shops.
+                                In total, Marina Shopping includes 147 stores spread over two levels over a commercial area of ​​43,746 m².</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-07" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/marche-centrale.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Marche Central</h5>
+                            <p>The Central Market was designed by Pierre Bousquet, and construction was completed in 1917, on the site of the Casablanca Fair of 1915.
+                                The Central Market was the most important marketplace in Casablanca's European ville nouvelle.
+                                The Moroccan nationalist resistance fighter Muhammad Zarqtuni bombed the Central Market on December 24, 1953, after French forces forced Sultan Muhammad VI into exile on August 20, 1953 — which was Eid al-Adha.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Tramway</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-08" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/marishal.jpeg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Place des Nations-Unies</h5>
+                            <p>Place des Nations-Unies, formerly called Place de France, is a square in the center of Casablanca. It was laid out by the French architect and urban planner Henri Prost in 1915 and served as a link between the old medina and the new city center.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-09" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/place-md5.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Place Mohamed V</h5>
+                            <p>Mohammed V Square (Arabic: ساحة محمد الخامس) is a public square of historical and symbolic significance located in central Casablanca, Morocco. It was established in 1916 at the beginning of the French protectorate in Morocco under Resident-general Hubert Lyautey, on a design by architects Henri Prost and Joseph Marrast.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-10" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/eglise.jpeg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Église du Sacré-Cœur</h5>
+                            <p>The Church of the Sacred Heart ( Arabic  : كاتدرائية القلب المقدس) is a former Catholic shrine in the city of Casablanca, Morocco . It was built from 1930 by the architect Paul Tournon 1, winner of the Prix de Rome, in a style combining Gothic aesthetics and Art Deco. It is surrounded by a vast public garden, the Parc de la Ligue Arabe .</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-11" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/villa-des-arts.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Villa des Arts</h5>
+                            <p>Located at 30 Boulevard Brahim Roudani in Casablanca, the Villa des Arts Museum is a place that is retro, nostalgic and profoundly modern at the same time. And for good reason, this museum exhibits contemporary Moroccan art in a superb renovated 1930s villa. Belonging to the ONA Foundation, the Museum of the Villa des Arts is a major cultural place in the city of Casablanca.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-12" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/palais-royale.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Palais Royale</h5>
+                            <p>In Casablanca, in the Habous district, is one of the royal palaces of Morocco. Discover this extraordinary place, built at the beginning of the 20th century, and consider renting a car in Casablanca to go and admire it up close. <br>
+                                The Royal Palace of Casablanca is certainly the most beautiful monument in the city. Built in the 1920s by the Pertuzio brothers, this building has an Arab-Muslim architectural style while being very modern. At the heart of the palace, Mediterranean-style gardens designed by the architect Forestier make the place even more sumptuous.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-13" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/pacha.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Mehkama du Pacha</h5>
+                            <p>Mahkamat al-Pasha (Arabic: مَحْكَمَة الباشا "the pasha's courthouse," French: Mahkama du Pacha) is an administrative building constructed 1941-1942 in the Hubous neighborhood of Casablanca, Morocco. The complex serves or has served as a courthouse, residence of the pasha (governor), parliamentary reception hall, and jail.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-14" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/Musée.jpg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Musée du Judaïsme Marocain</h5>
+                            <p>The Museum of Moroccan Judaism, created in 1997, is one of the two museums in Casablanca devoted to Judaism, the only ones in the Arab world.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+                <div id="modal-15" hidden>
+                    <div class="modal-popup">
+                        <img src="{% static 'images/touristic/anfapark1.jpeg' %}" alt="">
+            
+                        <div class="modal-popup__desc">
+                            <h5>Anfa Park</h5>
+                            <p>The new park offers a series of leisure and relaxation facilities: playgrounds for children, green promenades, restaurants and cafes, an exhibition hall, a skate park, a 1.5 km jogging circuit and equipment sports for those who want to move in the open air.</p>
+                            <ul class="modal-popup__cat">
+                                <li>Red Taxi</li>
+                                <li>White Taxi</li>
+                                <li>Tramway</li>
+                                <li>Bus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <!-- end modal -->
+
+        </section>  
+        <!-- end content -->
+
+        <section id="circuit">
+            <div class="map">
+                <iframe class="map_cr" src="https://www.google.com/maps/d/embed?mid=1z-GwhPYO7CpQ_xXVin2-58PWOohhhUY&ehbc=2E312F" width="1060" height="700"></iframe>
+            </div>
+        </section> 
+        <!-- end s-services -->
+
+
+        <!-- # site-footer
+        ================================================== -->
+        <footer id="footer" class="s-footer target-section">
+            <div class="row s-footer__bottom">
+
+                <div class="column lg-6 tab-12 s-footer__bottom-left">
+                    <ul class="s-footer__social">
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16 fill="currentColor" class="bi bi-instagram" viewBox="0 0 20 16">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="17" class="bi bi-linkedin" viewBox="0 0 22 17" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" fill="currentColor" class="bi bi-pinterest" viewBox="0 0 19 18" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Pinterest</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" fill="currentColor" class="bi bi-github" viewBox="0 0 18 17" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="column lg-6 tab-12 s-footer__bottom-right">
+                    <div class="ss-copyright">
+                        <span>© Copyright 2022</span> 
+                        <span>Design by <a href="#">WALID AZHARI</a></span>
+                    </div>
+                </div>
+
+            </div> 
+            <!-- s-footer__bottom -->
+    
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"></path></svg>
+                </a>
+            </div> 
+            <!-- end ss-go-top -->
+    
+        </footer> 
+        <!-- end footer -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
