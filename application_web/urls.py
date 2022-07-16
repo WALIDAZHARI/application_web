@@ -26,6 +26,3 @@ urlpatterns = [
     path('Touristic', views.tourist, name='Tourist'),
 
 ]
-
-
-handler404 = 'app_django.views.error_404'

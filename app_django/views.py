@@ -1,3 +1,4 @@
+from logging import exception
 from django.shortcuts import render
 
 def home(request):
@@ -11,7 +12,3 @@ def school(request):
 
 def tourist(request):
     return render(request, "Tourist.html")
-
-
-def error_404(request, exception):
-    return render(request, '404.html')
